@@ -44,22 +44,26 @@ const question = document.getElementById("question"); //capturing the question d
 // FUNCTIONS //
 
 // START GAME BUTTON
+// funcao a ser ativada quando clicar no 'start game' button
 function startButton() {
-  // funcao a ser ativada quando clicar no 'start game' button
   randomQuestion();
-  question.innerText = arrQuestions[0].question; // to insert the question inside the question div
-  selectAnswer(); // to call the funcion selectAnswer
+  // to call the funcion selectAnswer
+  selectQuestion();
 }
 
 // ANSWERS OPTIONS BUTTONS
+let round = 0;
 // para ser ativado quando eu clicar no botao da answer
-function selectAnswer() {
+function selectQuestion() {
+  // to insert the question inside the question div
+  question.innerText = arrQuestions[round].question;
   // para percorrer a array-like answerBtn
   for (let i = 0; i < answerBtn.length; i++) {
     // to insert the answers inside each respective answer-btn
-    answerBtn[i].innerText = arrQuestions[0].answers[i];
+    answerBtn[i].innerText = arrQuestions[round].answers[i];
     answerBtn[i].addEventListener("click", () => {
       // eventlistener de click
+      checkAnswer(arrQuestions[round].answers[i]);
     });
     // window.alert("To funfando caraleooo!")
   }
@@ -75,11 +79,17 @@ function randomQuestion() {
 // console.log(randomQuestion())
 
 // FUNCION TO CHECK IF ANSWER IS CORRECT OR NOT
-function checkAnswer() {
-  if (arrQuestions[0].answers[i] === arrQuestions[0].correctAnswer) {
-    randomQuestion(); //criar funcao para passar para proxima pergunta?
+function checkAnswer(answer) {
+  console.log(answer);
+  if (arrQuestions[round].correctAnswer === answer) {
+    console.log("Acertou");
+    round++;
+    //INSERT IF HERE
+    selectQuestion();
+    // randomQuestion(); //criar funcao para passar para proxima pergunta, se a resposta for correta.
   } else {
-    oneLessLife(); // criar funcao para perder 1 vida de 3?
+    console.log("Errou!");
+    // location.reload(); // criar funcao para perder 1 vida de 3, se areposta for errada?
   }
 }
 
@@ -101,3 +111,17 @@ startBtn.addEventListener("click", () => {
 // answerBtn.addEventListener("click", () => { //it's not working, because getElementByClassName returns an array-like object
 //   selectAnswer();
 // });
+
+// QUESTIONS //
+
+// 1. COMO FAZER UMA PERGUNTA NAO SE REPETIR NA RANDOMQUESTION FUNCTION?
+// 2. COMO FAZER O LOOP CHECAR SE A PERGUNTA ESTA CORRETA OU NAO?
+
+//FAZER DEPOIS DO HELP COM A KAREN 14/06 //
+
+// FAZER FUNCAO END GAME
+// IF ROUND > 4
+// CHAMAR FUNCAO END GAME
+
+// LESS LIFE FUNCTION
+// VARIAVEL LIFE CRIADA NO SCOPO global COMO O ROUND
