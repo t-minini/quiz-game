@@ -41,11 +41,20 @@ body {
     width: 100px;
 } */
 
+#question {
+  text-align: center;
+}
 .answer-box {
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 10px;
   margin: 20px 0;
+}
+#start-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 .btn {
   background-color: cornflowerblue;
@@ -60,3 +69,7 @@ body {
 .btn:hover {
   border-color: black;
 }
+
+/* .hide {
+  display: none;
+} */

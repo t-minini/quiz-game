@@ -28,42 +28,76 @@ const arrQuestions = [
   },
 ];
 
-// CAPTURING ELEMENTS FROM HTML
-const question = document.getElementById("question");
-const answerBtn = document.getElementById("answer-opt").getElementsByClassName("answer-btn"); // acho que deu ruim
-const startBtn = document.getElementById("start-btn");
-console.log(answerBtn);
+// CAPTURING ELEMENTS FROM HTML //
 
-// DISPLAY THE QUESTIONS DFATABASE ON THE SCREEN
+// START GAME BUTTON
+const startBtn = document.getElementById("start-btn"); //capturing the start game button
 
-// FUNCTIONS
+// ANSWER OPTIONS BUTTONS
+const answerBtn = document.getElementsByClassName("answer-btn"); //capturing the answer options buttons
+
+// QUESTION DIV
+const question = document.getElementById("question"); //capturing the question div
+
+// console.log(answerBtn);
+
+// FUNCTIONS //
+
+// START GAME BUTTON
 function startButton() {
-  question.innerText = arrQuestions[0].question;
-  answerBtn.innerText = arrQuestions[0].answers; //queria mudar o texto de cada button com sua respectiva resposta.
-
-  //   console.log('Started')
-  //   selectAnswer();
-
-  //criar o for loop, criar os botoes com o eveNT listeNer + FUNCAO DE CHECK
+  // funcao a ser ativada quando clicar no 'start game' button
+  randomQuestion();
+  question.innerText = arrQuestions[0].question; // to insert the question inside the question div
+  selectAnswer(); // to call the funcion selectAnswer
 }
-// criar uma funcao de check para checar as respostas. dentro do eevent listener dos botones das perguntas.
 
+// ANSWERS OPTIONS BUTTONS
+// para ser ativado quando eu clicar no botao da answer
 function selectAnswer() {
-  for (let i = 0; i < arrQuestions.answers.length; i++) {
-    if (answers[i] === correctAnswer) {
-        return nextQuestion() //criar funcao para passar para proxima pergunta?
-    } else {
-        return oneLessLife () // criar funcao para perder 1 vida de 3.
+  // para percorrer a array-like answerBtn
+  for (let i = 0; i < answerBtn.length; i++) {
+    // to insert the answers inside each respective answer-btn
+    answerBtn[i].innerText = arrQuestions[0].answers[i];
+    answerBtn[i].addEventListener("click", () => {
+      // eventlistener de click
+    });
+    // window.alert("To funfando caraleooo!")
   }
-  //console.log
-}
 }
 
-// EVENT LISTENERS
+// FUNCTION TO PICK RANDOM QUESTIONS
+function randomQuestion() {
+  // to pick a random question from arrQuestions
+  return arrQuestions.sort(() => Math.random() - Math.random()).slice();
+  // arrQuestions[Math.floor(Math.random() * arrQuestions.length)]
+}
+// randomQuestion()
+// console.log(randomQuestion())
+
+// FUNCION TO CHECK IF ANSWER IS CORRECT OR NOT
+function checkAnswer() {
+  if (arrQuestions[0].answers[i] === arrQuestions[0].correctAnswer) {
+    randomQuestion(); //criar funcao para passar para proxima pergunta?
+  } else {
+    oneLessLife(); // criar funcao para perder 1 vida de 3?
+  }
+}
+
+// FUNCTION TO BE CALLED WHEN THE ANSWER IS CORRECT
+function nextQuestion() {}
+
+// FUNCTION TO BE CALLED WHEN THE ANSWER IS INCORRECT
+function oneLessLife() {}
+
+// EVENT LISTENERS //
+
+// START GAME BUTTON
 startBtn.addEventListener("click", () => {
+  //event listener click que aciona a funcao startButton
   startButton();
   startBtn.style.display = "none"; // to make START GAME button disappear
 });
+
 // answerBtn.addEventListener("click", () => { //it's not working, because getElementByClassName returns an array-like object
 //   selectAnswer();
 // });
