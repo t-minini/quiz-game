@@ -1,0 +1,7 @@
+
+// CLASSES
+class Game {
+    constructor() {
+
+    }
+}

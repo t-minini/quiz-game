@@ -1,5 +1,62 @@
-
 /* GENERAL STYLE FOR THE WHOLE PROJECT */
 * {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightgrey;
+  padding: 0;
+  margin: 0;
+  width: 100vw; /* viewport width */
+  height: 100vh; /* viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-card {
+  width: 500px;
+  height: 400px;
+  /* max-width: 80%; */
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+}
+
+.game-logo-start img {
+  padding: 10px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .start-img {
+    padding: 10px;
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+} */
+
+.answer-box {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+.btn {
+  background-color: cornflowerblue;
+  border: 1px solid;
+  border-color: dodgerblue;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  outline: none;
+}
+
+.btn:hover {
+  border-color: black;
 }
