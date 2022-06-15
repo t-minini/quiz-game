@@ -1,5 +1,6 @@
 // console.log("teste!!");
-// QUESTIONS DATABASE
+
+// QUESTIONS DATABASE //
 const arrQuestions = [
   {
     question: "What would be the result of 3+2+”7″?",
@@ -31,62 +32,50 @@ const arrQuestions = [
 // CAPTURING ELEMENTS FROM HTML //
 
 // START GAME BUTTON
-const startBtn = document.getElementById("start-btn"); //capturing the start game button
-
+const startBtn = document.getElementById("start-game");
+// QUESTION + ANSWERS BOX
+const questionBox = document.getElementById("question-box");
 // ANSWER OPTIONS BUTTONS
-const answerBtn = document.getElementsByClassName("answer-btn"); //capturing the answer options buttons
-
-// QUESTION DIV
-const question = document.getElementById("question"); //capturing the question div
-
-// console.log(answerBtn);
+const answerBtn = document.getElementsByClassName("answer-btn");
+// QUESTION <DIV>
+const question = document.getElementById("question");
 
 // FUNCTIONS //
 
-// START GAME BUTTON
-// funcao a ser ativada quando clicar no 'start game' button
+// FUNCTION TO START THE GAME
 function startButton() {
+  startBtn.classList.add("hide");
+  questionBox.classList.remove("hide");
   randomQuestion();
   addEvents();
   // to call the funcion selectAnswer
   console.log("startButton");
   selectQuestion();
 }
-
+// FUNCTION TO ADD CLICK EVENT TO EACH ANSWER BUTTON
 function addEvents() {
   for (let i = 0; i < answerBtn.length; i++) {
-    // to insert the answers inside each respective answer-btn
-    // eventlistener de click
     answerBtn[i].addEventListener("click", () => {
       checkAnswer(arrQuestions[round].answers[i]);
     });
-    // window.alert("To funfando caraleooo!")
   }
 }
-
-// ANSWERS OPTIONS BUTTONS
+// FUNCTION TO ADD ANSWERS TO THE OPTIONS BUTTONS
 let round = 0;
-// para ser ativado quando eu clicar no botao da answer
 function selectQuestion() {
   console.log("selectQuestion");
-  // to insert the question inside the question div
+  // to insert a question inside the question <div>
   question.innerText = arrQuestions[round].question;
   for (let i = 0; i < answerBtn.length; i++) {
     answerBtn[i].innerText = arrQuestions[round].answers[i];
   }
-  // para percorrer a array-like answerBtn
   console.log(answerBtn);
 }
 
-// FUNCTION TO PICK RANDOM QUESTIONS
+// FUNCTION TO PICK RANDOM QUESTIONS FROM arrQuestions
 function randomQuestion() {
-  // to pick a random question from arrQuestions
   return arrQuestions.sort(() => Math.random() - Math.random()).slice();
-  // arrQuestions[Math.floor(Math.random() * arrQuestions.length)]
 }
-// randomQuestion()
-// console.log(randomQuestion())
-
 // FUNCION TO CHECK IF ANSWER IS CORRECT OR NOT
 function checkAnswer(answer) {
   console.log(answer);
@@ -94,26 +83,23 @@ function checkAnswer(answer) {
   if (arrQuestions[round].correctAnswer === answer) {
     console.log("Acertou");
     round++;
+    if (round >= arrQuestions.length) {
+      return location.reload(youWin()); // end the game, display window "You Win" and reload the page.
+    }
     selectQuestion();
-  }
-  // else if (round <= arrQuestions.length) {
-  //   selectQuestion();
-  // }
-  // else if (round >= arrQuestions.length) {
-  //   endGame();
-  else {
+  } else {
     console.log("Errou!");
-    // endGame();
-    // location.reload(); // criar funcao para perder 1 vida de 3, se areposta for errada?
+    return location.reload(gameOver()); // end the game, display window "GameOver" and reload the page.
   }
 }
 
-// FUNCTION TO BE CALLED WHEN THE ANSWER IS CORRECT
-// function nextQuestion() {}
-
 //FUNCTION TO BE CALLED WHEN THE GAME ENDS
-function endGame() {
-  window.alert("The End");
+function gameOver() {
+  window.alert("Game Over"); // HOW TO DISPLAY AN IMAGE INSTEAD?
+}
+//FUNCTION TO BE CALLED WHEN YOU WIN
+function youWin() {
+  window.alert("You Win"); // HOW TO DISPLAY AN IMAGE INSTEAD?
 }
 
 // FUNCTION TO BE CALLED WHEN THE ANSWER IS INCORRECT
@@ -126,31 +112,22 @@ function endGame() {
 //   )
 // }
 
-function gameOver() {
-  // if (errors === 3) {
-  //   // display game over image + play sound
-  // }
-}
-
 // EVENT LISTENERS //
 
 // START GAME BUTTON
 startBtn.addEventListener("click", () => {
   //event listener click que aciona a funcao startButton
   startButton();
-  startBtn.style.display = "none"; // to make START GAME button disappear
+  // startBtn.style.display = "none"; // to make START GAME button disappear
 });
-
-// answerBtn.addEventListener("click", () => { //it's not working, because getElementByClassName returns an array-like object
-//   selectAnswer();
-// });
 
 // QUESTIONS //
 
-// 1. COMO FAZER UMA PERGUNTA NAO SE REPETIR NA RANDOMQUESTION FUNCTION?
-// 2. COMO FAZER O LOOP CHECAR SE A PERGUNTA ESTA CORRETA OU NAO?
+// 1. COMO FAZER O BOTAO PARAR DE FICAR BRANCO, VOLTAR A COR AZUL QUANDO NAO CLICADO?
+// 2. COMO FAZER O START GAME BOTTAO DESAPARECER TOTALMENTE? TEV A VER COM O FLEXBOX EU ACHO.
+// 3. COMO FAZER QUE, AO INVEZ DE ABRIR UMA JANELA, APARECER UMA IMAGEN NO GAME OVER E NO WIN?
 
-//FAZER DEPOIS DO HELP COM A KAREN 14/06 //
+//FAZER DEPOIS DO HELP COM A KAREN 15/06 //
 
 // FAZER FUNCAO END GAME
 // IF ROUND > 4
