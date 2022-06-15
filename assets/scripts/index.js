@@ -47,26 +47,35 @@ const question = document.getElementById("question"); //capturing the question d
 // funcao a ser ativada quando clicar no 'start game' button
 function startButton() {
   randomQuestion();
+  addEvents();
   // to call the funcion selectAnswer
+  console.log("startButton");
   selectQuestion();
+}
+
+function addEvents() {
+  for (let i = 0; i < answerBtn.length; i++) {
+    // to insert the answers inside each respective answer-btn
+    // eventlistener de click
+    answerBtn[i].addEventListener("click", () => {
+      checkAnswer(arrQuestions[round].answers[i]);
+    });
+    // window.alert("To funfando caraleooo!")
+  }
 }
 
 // ANSWERS OPTIONS BUTTONS
 let round = 0;
 // para ser ativado quando eu clicar no botao da answer
 function selectQuestion() {
+  console.log("selectQuestion");
   // to insert the question inside the question div
   question.innerText = arrQuestions[round].question;
-  // para percorrer a array-like answerBtn
   for (let i = 0; i < answerBtn.length; i++) {
-    // to insert the answers inside each respective answer-btn
     answerBtn[i].innerText = arrQuestions[round].answers[i];
-    answerBtn[i].addEventListener("click", () => {
-      // eventlistener de click
-      checkAnswer(arrQuestions[round].answers[i]);
-    });
-    // window.alert("To funfando caraleooo!")
   }
+  // para percorrer a array-like answerBtn
+  console.log(answerBtn);
 }
 
 // FUNCTION TO PICK RANDOM QUESTIONS
@@ -81,23 +90,47 @@ function randomQuestion() {
 // FUNCION TO CHECK IF ANSWER IS CORRECT OR NOT
 function checkAnswer(answer) {
   console.log(answer);
+  console.log(arrQuestions[round].correctAnswer);
   if (arrQuestions[round].correctAnswer === answer) {
     console.log("Acertou");
     round++;
-    //INSERT IF HERE
     selectQuestion();
-    // randomQuestion(); //criar funcao para passar para proxima pergunta, se a resposta for correta.
-  } else {
+  }
+  // else if (round <= arrQuestions.length) {
+  //   selectQuestion();
+  // }
+  // else if (round >= arrQuestions.length) {
+  //   endGame();
+  else {
     console.log("Errou!");
+    // endGame();
     // location.reload(); // criar funcao para perder 1 vida de 3, se areposta for errada?
   }
 }
 
 // FUNCTION TO BE CALLED WHEN THE ANSWER IS CORRECT
-function nextQuestion() {}
+// function nextQuestion() {}
+
+//FUNCTION TO BE CALLED WHEN THE GAME ENDS
+function endGame() {
+  window.alert("The End");
+}
 
 // FUNCTION TO BE CALLED WHEN THE ANSWER IS INCORRECT
-function oneLessLife() {}
+// let errors = 0;
+// function oneLessLife() {
+//   if (errors <= 3) {
+//     function() // criar funcao para checar vidas
+//   } else (
+//     gameOver()  // criar funcao para quando o jogador errar 3 x.
+//   )
+// }
+
+function gameOver() {
+  // if (errors === 3) {
+  //   // display game over image + play sound
+  // }
+}
 
 // EVENT LISTENERS //
 

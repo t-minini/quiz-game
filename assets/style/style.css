@@ -51,10 +51,18 @@ body {
   margin: 20px 0;
 }
 #start-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 
+}
+.start-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
 }
 .btn {
   background-color: cornflowerblue;
