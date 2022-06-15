@@ -77,6 +77,7 @@ function randomQuestion() {
   return arrQuestions.sort(() => Math.random() - Math.random()).slice();
 }
 // FUNCION TO CHECK IF ANSWER IS CORRECT OR NOT
+let totalLife = 3;
 function checkAnswer(answer) {
   console.log(answer);
   console.log(arrQuestions[round].correctAnswer);
@@ -88,8 +89,12 @@ function checkAnswer(answer) {
     }
     selectQuestion();
   } else {
-    console.log("Errou!");
-    return location.reload(gameOver()); // end the game, display window "GameOver" and reload the page.
+    totalLife--;
+    console.log(totalLife);
+    if (totalLife === 0) {
+      console.log("Errou!");
+      return location.reload(gameOver());
+    }
   }
 }
 
@@ -123,9 +128,9 @@ startBtn.addEventListener("click", () => {
 
 // QUESTIONS //
 
-// 1. COMO FAZER O BOTAO PARAR DE FICAR BRANCO, VOLTAR A COR AZUL QUANDO NAO CLICADO?
+// 1. COMO FAZER O BOTAO PARAR DE FICAR BRANCO, VOLTAR A COR AZUL QUANDO NAO CLICADO? "PESQUISAR BOTTAO HOVER"
 // 2. COMO FAZER O START GAME BOTTAO DESAPARECER TOTALMENTE? TEV A VER COM O FLEXBOX EU ACHO.
-// 3. COMO FAZER QUE, AO INVEZ DE ABRIR UMA JANELA, APARECER UMA IMAGEN NO GAME OVER E NO WIN?
+// 3. COMO FAZER QUE, AO INVEZ DE ABRIR UMA JANELA, APARECER UMA IMAGEN NO GAME OVER E NO WIN? "DONE"
 
 //FAZER DEPOIS DO HELP COM A KAREN 15/06 //
 

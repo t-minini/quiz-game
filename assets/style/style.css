@@ -54,11 +54,11 @@ body {
   gap: 10px;
   margin: 20px 0;
 }
-/* #start-game {
+.start-game {
   display: flex;
   justify-content: center;
   align-items: center;
-} */
+}
 .start-btn {
   font-size: 1.5rem;
   font-weight: bold;
@@ -76,7 +76,6 @@ body {
 .btn:hover {
   border-color: black;
 }
-
 .hide {
   display: none;
 }
