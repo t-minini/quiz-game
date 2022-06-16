@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: lightgrey;
+  background-color: rgb(5, 49, 130);
   padding: 0;
   margin: 0;
   width: 100vw; /* viewport width */
@@ -19,17 +19,17 @@ body {
   width: 500px;
   height: 400px;
   /* max-width: 80%; */
-  background-color: white;
-  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 0px;
   padding: 10px;
-  box-shadow: 0 0 10px 2px;
+  box-shadow: 0 5px 25px 0px rgba(17, 23, 24, 0.704);
 }
 
 .game-logo-start img {
   padding: 10px;
-  margin: 10px;
-  width: 200px;
-  height: 200px;
+  margin: 50px 0px 10px 0px;
+  /* width: 600px; */
+  height: 185px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,36 +45,51 @@ body {
   justify-content: center;
   align-items: center;
 }
+#question-box {
+  margin: 0px;
+}
 #question {
+  margin: 0px;
   text-align: center;
+  font-weight: bolder;
+  background-color: rgb(40, 66, 116);
+  color: white;
 }
 .answer-box {
+  margin: 50px 0px;
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 10px;
   margin: 20px 0;
 }
 .start-game {
+  margin: 20px 0px 0px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .start-btn {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: bold;
-  padding: 10px 20px;
+  /* padding: px 20px; */
 }
 .btn {
   background-color: cornflowerblue;
   border: 1px solid;
-  border-color: dodgerblue;
-  border-radius: 5px;
+  border-color: none;
+  border-radius: 10px;
   padding: 5px 10px;
   color: white;
   outline: none;
+  box-shadow: 5px 5px rgb(193, 192, 192);
 }
 .btn:hover {
-  border-color: black;
+  border-color: white;
+  background-color: rgb(151, 177, 224);
+  color: white;
+  /* color: white; */
+  /* border-color: dodgerblue; */
+  /* background-color: cornflowerblue; */
 }
 .hide {
   display: none;

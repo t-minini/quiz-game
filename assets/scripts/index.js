@@ -15,17 +15,52 @@ const arrQuestions = [
   {
     question: "Which symbol is used for comments in HTML?",
     answers: [
-      "/* comment here */",
-      "// comment here",
-      "/ comment here /",
-      "<!-- comment here -->",
+      "/* your comment here */",
+      "// your comment here",
+      "/ your comment here /",
+      "<!-- your comment here -->",
     ],
-    correctAnswer: "<!-- comment here -->",
+    correctAnswer: "<!-- your comment here -->",
   },
   {
     question: "What is the data type of variables in JavaScript?",
     answers: ["String", "Object", "Boolean", "Undefined"],
     correctAnswer: "Object",
+  },
+  {
+    question: "Choose the correct HTML tag for the largest heading.",
+    answers: ["<heading>", "<h6>", "<head>", "<h1>"],
+    correctAnswer: "<h1>",
+  },
+  {
+    question: "How can you make a numbered list?",
+    answers: ["<ol>", "<ul>", "<dl>", "<list>"],
+    correctAnswer: "<ol>",
+  },
+  {
+    question: "What does CSS stands for?",
+    answers: [
+      "Creative Style Sheets",
+      "Cascading Style Sheets",
+      "Computer Style Sheets",
+      "Colorful Style Sheets",
+    ],
+    correctAnswer: "Cascading Style Sheets",
+  },
+  {
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: ["<js>", "<script>", "<javascript>", "<scripting>"],
+    correctAnswer: "<script>",
+  },
+  {
+    question: "How do you create a function in JavaScript?",
+    answers: [
+      "function myFunction()",
+      "function = myFunction()",
+      "function:myFunction",
+      "function() = myFunction",
+    ],
+    correctAnswer: "function myFunction()",
   },
 ];
 
@@ -48,7 +83,7 @@ function startButton() {
   questionBox.classList.remove("hide");
   randomQuestion();
   addEvents();
-  // to call the funcion selectAnswer
+  // to call the function selectAnswer
   console.log("startButton");
   selectQuestion();
 }
@@ -71,10 +106,15 @@ function selectQuestion() {
   }
   console.log(answerBtn);
 }
-
 // FUNCTION TO PICK RANDOM QUESTIONS FROM arrQuestions
 function randomQuestion() {
   return arrQuestions.sort(() => Math.random() - Math.random()).slice();
+}
+// FUNCTION TO SHUFFLE ANSWERS
+function shuffleAnswers() {
+  return arrQuestions[round].answers
+    .sort(() => Math.random() - Math.random())
+    .slice();
 }
 // FUNCION TO CHECK IF ANSWER IS CORRECT OR NOT
 let totalLife = 3;
@@ -87,6 +127,7 @@ function checkAnswer(answer) {
     if (round >= arrQuestions.length) {
       return location.reload(youWin()); // end the game, display window "You Win" and reload the page.
     }
+    shuffleAnswers();
     selectQuestion();
   } else {
     totalLife--;
@@ -97,7 +138,6 @@ function checkAnswer(answer) {
     }
   }
 }
-
 //FUNCTION TO BE CALLED WHEN THE GAME ENDS
 function gameOver() {
   window.alert("Game Over"); // HOW TO DISPLAY AN IMAGE INSTEAD?
@@ -107,15 +147,6 @@ function youWin() {
   window.alert("You Win"); // HOW TO DISPLAY AN IMAGE INSTEAD?
 }
 
-// FUNCTION TO BE CALLED WHEN THE ANSWER IS INCORRECT
-// let errors = 0;
-// function oneLessLife() {
-//   if (errors <= 3) {
-//     function() // criar funcao para checar vidas
-//   } else (
-//     gameOver()  // criar funcao para quando o jogador errar 3 x.
-//   )
-// }
 
 // EVENT LISTENERS //
 
@@ -129,14 +160,4 @@ startBtn.addEventListener("click", () => {
 // QUESTIONS //
 
 // 1. COMO FAZER O BOTAO PARAR DE FICAR BRANCO, VOLTAR A COR AZUL QUANDO NAO CLICADO? "PESQUISAR BOTTAO HOVER"
-// 2. COMO FAZER O START GAME BOTTAO DESAPARECER TOTALMENTE? TEV A VER COM O FLEXBOX EU ACHO.
 // 3. COMO FAZER QUE, AO INVEZ DE ABRIR UMA JANELA, APARECER UMA IMAGEN NO GAME OVER E NO WIN? "DONE"
-
-//FAZER DEPOIS DO HELP COM A KAREN 15/06 //
-
-// FAZER FUNCAO END GAME
-// IF ROUND > 4
-// CHAMAR FUNCAO END GAME
-
-// LESS LIFE FUNCTION
-// VARIAVEL LIFE CRIADA NO SCOPO global COMO O ROUND
