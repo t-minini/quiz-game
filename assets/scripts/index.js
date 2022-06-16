@@ -104,7 +104,7 @@ function selectQuestion() {
   for (let i = 0; i < answerBtn.length; i++) {
     answerBtn[i].innerText = arrQuestions[round].answers[i];
   }
-  console.log(answerBtn);
+  // console.log(answerBtn);
 }
 // FUNCTION TO PICK RANDOM QUESTIONS FROM arrQuestions
 function randomQuestion() {
@@ -146,7 +146,6 @@ function gameOver() {
 function youWin() {
   window.alert("You Win"); // HOW TO DISPLAY AN IMAGE INSTEAD?
 }
-
 
 // EVENT LISTENERS //
 

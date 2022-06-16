@@ -83,7 +83,7 @@ body {
   outline: none;
   box-shadow: 5px 5px rgb(193, 192, 192);
 }
-.btn:hover {
+.btn:active {
   border-color: white;
   background-color: rgb(151, 177, 224);
   color: white;
@@ -93,4 +93,27 @@ body {
 }
 .hide {
   display: none;
+}
+/* YOU WIN IMAGE */
+/* .you-win-img {
+  padding: 10px;
+  margin: 50px 0px 10px 0px;
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  display: inset-block;
+  justify-content: center;
+  align-items: center; 
+} */
+
+.modal {
+  width: 600px;
+  height: 600px;
+  /* max-width: 80%; */
+  /* background-color: rgb(255, 255, 255); */
+  position: absolute;
+  border-radius: 0px;
+  padding: 10px;
+  background-color: brown;
+  display: block;
 }
