@@ -84,8 +84,8 @@ const restartBtn = document.getElementById("restart-btn");
 // RESTART BUTTON OVER
 const restartBtnOver = document.getElementById("restart-btn-over");
 // GAME SOUNDS
-const gameOverSound = new Audio("/assets/sounds/game-over-sound.mp3");
-const youWinSound = new Audio("/assets/sounds/you-win-sound.mp3");
+const gameOverSound = new Audio("./assets/sounds/game-over-sound.mp3");
+const youWinSound = new Audio("./assets/sounds/you-win-sound.mp3");
 
 
 // FUNCTIONS //
