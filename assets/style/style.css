@@ -20,6 +20,7 @@ body {
   height: 400px;
   /* max-width: 80%; */
   background-color: rgb(255, 255, 255);
+  /* background-color: red; */
   border-radius: 0px;
   padding: 10px;
   box-shadow: 0 5px 25px 0px rgba(17, 23, 24, 0.704);
@@ -73,6 +74,9 @@ body {
   font-weight: bold;
   /* padding: px 20px; */
 }
+.answer-btn {
+  background-color: cornflowerblue;
+}
 .btn {
   background-color: cornflowerblue;
   border: 1px solid;
@@ -80,10 +84,10 @@ body {
   border-radius: 10px;
   padding: 5px 10px;
   color: white;
-  outline: none;
+  /* outline: none; */
   box-shadow: 5px 5px rgb(193, 192, 192);
 }
-.btn:active {
+.btn:hover {
   border-color: white;
   background-color: rgb(151, 177, 224);
   color: white;
@@ -95,25 +99,53 @@ body {
   display: none;
 }
 /* YOU WIN IMAGE */
-/* .you-win-img {
+.you-win-img {
   padding: 10px;
-  margin: 50px 0px 10px 0px;
-  width: 50px;
-  height: 100px;
-  position: absolute;
-  display: inset-block;
-  justify-content: center;
+  margin: 0px 10px 0px 45px;
+  width: 400px;
+  height: 400px;
+  /* position: absolute; */
+  /* display: flexbox; */
+  /* flex-wrap: wrap; */
+  /* justify-content: center;
   align-items: center; 
-} */
+  align-content: center; */
+}
+.game-over-img {
+  padding: 0px;
+  margin: 40px 10px 0px 45px;
+  width: 400px;
+  height: 200px;
+}
 
-.modal {
-  width: 600px;
-  height: 600px;
-  /* max-width: 80%; */
-  /* background-color: rgb(255, 255, 255); */
-  position: absolute;
-  border-radius: 0px;
-  padding: 10px;
-  background-color: brown;
-  display: block;
+/* .modal { */
+/* width: 600px; */
+/* height: 600px; */
+/* max-width: 80%; */
+/* background-color: rgb(255, 255, 255); */
+/* position: absolute; */
+/* border-radius: 0px; */
+/* padding: 10px; */
+/* background-color: brown; */
+/* display: block; */
+/* } */
+
+#restart-btn-win {
+  padding: 0px 10px 0px 10px;
+  margin: 0px 0px 0px 300px;
+}
+.restart-btn-win {
+  padding: 0px;
+  /* margin: 0px 0px 0px 300px; */
+  position: relative;
+  font-size: 1.9rem;
+  font-weight: bold;
+  bottom: 134px;
+  left: 287px;
+}
+.restart-btn-over {
+  padding: px 60px 0px 10px;
+  margin: 0px 0px 0px 300px;
+  font-size: 1.9rem;
+  font-weight: bold;
 }

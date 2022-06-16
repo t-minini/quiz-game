@@ -26,7 +26,27 @@
   <!-- GAME SCREEN CARD -->
   <body>
     <section class="game-card">
-      <div class="game-logo-start">
+      <div id="win-and-over-imgs">
+        <div id="you-win-img" class="hide">
+          <img
+            src="./assets/images/you-win.png"
+            alt="you win image"
+            class="you-win-img"
+          />
+          <button type="button" id="restart-btn" class="restart-btn-win btn">
+            RESTART
+          </button>
+        </div>
+        <div id="game-over-img" class="hide">
+          <img
+            src="./assets/images/game-over.png"
+            alt="game over image"
+            class="game-over-img"
+          />
+          <button id="restart-btn-over" class="restart-btn-over btn">RESTART</button>
+        </div>
+      </div>
+      <div class="game-logo-start" id="game-logo-start">
         <img src="./assets/images/game-logo-2.png" alt="game logo" />
       </div>
       <div id="start-game" class="start-game">
@@ -42,16 +62,7 @@
         </div>
       </div>
       <!-- YOU WIN AND GAME OVER IMGS -->
-      <!-- <div class="modal"> -->
-        <!-- <img
-          src="./assets/images/you-win.png"
-          alt="you win image"
-          id="you-win-img"
-        /> -->
-      <!-- </div> -->
     </section>
-
-   
 
     <!-- JS LINKED FILES -->
     <script src="./assets/scripts/index.js"></script>

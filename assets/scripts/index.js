@@ -3,65 +3,65 @@
 // QUESTIONS DATABASE //
 const arrQuestions = [
   {
-    question: "What would be the result of 3+2+”7″?",
+    question: "What would be the result of 3 + 2 + ”7″?",
     answers: [12, 35, 57, "NaN"],
     correctAnswer: 57,
   },
-  {
-    question: "Which company developed JavaScript?",
-    answers: ["Amazon", "Netscape", "Microsoft", "Oracle"],
-    correctAnswer: "Netscape",
-  },
-  {
-    question: "Which symbol is used for comments in HTML?",
-    answers: [
-      "/* your comment here */",
-      "// your comment here",
-      "/ your comment here /",
-      "<!-- your comment here -->",
-    ],
-    correctAnswer: "<!-- your comment here -->",
-  },
-  {
-    question: "What is the data type of variables in JavaScript?",
-    answers: ["String", "Object", "Boolean", "Undefined"],
-    correctAnswer: "Object",
-  },
-  {
-    question: "Choose the correct HTML tag for the largest heading.",
-    answers: ["<heading>", "<h6>", "<head>", "<h1>"],
-    correctAnswer: "<h1>",
-  },
-  {
-    question: "How can you make a numbered list?",
-    answers: ["<ol>", "<ul>", "<dl>", "<list>"],
-    correctAnswer: "<ol>",
-  },
-  {
-    question: "What does CSS stands for?",
-    answers: [
-      "Creative Style Sheets",
-      "Cascading Style Sheets",
-      "Computer Style Sheets",
-      "Colorful Style Sheets",
-    ],
-    correctAnswer: "Cascading Style Sheets",
-  },
-  {
-    question: "Inside which HTML element do we put the JavaScript?",
-    answers: ["<js>", "<script>", "<javascript>", "<scripting>"],
-    correctAnswer: "<script>",
-  },
-  {
-    question: "How do you create a function in JavaScript?",
-    answers: [
-      "function myFunction()",
-      "function = myFunction()",
-      "function:myFunction",
-      "function() = myFunction",
-    ],
-    correctAnswer: "function myFunction()",
-  },
+  // {
+  //   question: "Which company developed JavaScript?",
+  //   answers: ["Amazon", "Netscape", "Microsoft", "Oracle"],
+  //   correctAnswer: "Netscape",
+  // },
+  // {
+  //   question: "Which symbol is used for comments in HTML?",
+  //   answers: [
+  //     "/* your comment here */",
+  //     "// your comment here",
+  //     "/ your comment here /",
+  //     "<!-- your comment here -->",
+  //   ],
+  //   correctAnswer: "<!-- your comment here -->",
+  // },
+  // {
+  //   question: "What is the data type of variables in JavaScript?",
+  //   answers: ["String", "Object", "Boolean", "Undefined"],
+  //   correctAnswer: "Object",
+  // },
+  // {
+  //   question: "Choose the correct HTML tag for the largest heading.",
+  //   answers: ["<heading>", "<h6>", "<head>", "<h1>"],
+  //   correctAnswer: "<h1>",
+  // },
+  // {
+  //   question: "How can you make a numbered list?",
+  //   answers: ["<ol>", "<ul>", "<dl>", "<list>"],
+  //   correctAnswer: "<ol>",
+  // },
+  // {
+  //   question: "What does CSS stands for?",
+  //   answers: [
+  //     "Creative Style Sheets",
+  //     "Cascading Style Sheets",
+  //     "Computer Style Sheets",
+  //     "Colorful Style Sheets",
+  //   ],
+  //   correctAnswer: "Cascading Style Sheets",
+  // },
+  // {
+  //   question: "Inside which HTML element do we put the JavaScript?",
+  //   answers: ["<js>", "<script>", "<javascript>", "<scripting>"],
+  //   correctAnswer: "<script>",
+  // },
+  // {
+  //   question: "How do you create a function in JavaScript?",
+  //   answers: [
+  //     "function myFunction()",
+  //     "function = myFunction()",
+  //     "function:myFunction",
+  //     "function() = myFunction",
+  //   ],
+  //   correctAnswer: "function myFunction()",
+  // },
 ];
 
 // CAPTURING ELEMENTS FROM HTML //
@@ -72,8 +72,19 @@ const startBtn = document.getElementById("start-game");
 const questionBox = document.getElementById("question-box");
 // ANSWER OPTIONS BUTTONS
 const answerBtn = document.getElementsByClassName("answer-btn");
+// GAME LOGO <DIV>
+const gameLogo = document.getElementById("game-logo-start");
 // QUESTION <DIV>
 const question = document.getElementById("question");
+// YOU WIN IMG
+const youWinImg = document.getElementById("you-win-img");
+// GAME OVER IMG
+const gameOverImg = document.getElementById("game-over-img");
+// RESTART BUTTON
+const restartBtn = document.getElementById("restart-btn");
+// RESTAR BUTTON OVER
+const restartBtnOver = document.getElementById("restart-btn-over");
+// console.log(gameLogo);
 
 // FUNCTIONS //
 
@@ -92,6 +103,7 @@ function addEvents() {
   for (let i = 0; i < answerBtn.length; i++) {
     answerBtn[i].addEventListener("click", () => {
       checkAnswer(arrQuestions[round].answers[i]);
+      // answerBtn[i].classList.add("btn");
     });
   }
 }
@@ -125,26 +137,45 @@ function checkAnswer(answer) {
     console.log("Acertou");
     round++;
     if (round >= arrQuestions.length) {
-      return location.reload(youWin()); // end the game, display window "You Win" and reload the page.
+      return youWin(); // end the game, display window "You Win" and reload the page.
     }
     shuffleAnswers();
     selectQuestion();
   } else {
     totalLife--;
-    console.log(totalLife);
+    // console.log(totalLife);
     if (totalLife === 0) {
-      console.log("Errou!");
-      return location.reload(gameOver());
+      // console.log("Errou!");
+      return gameOver();
     }
   }
 }
 //FUNCTION TO BE CALLED WHEN THE GAME ENDS
 function gameOver() {
-  window.alert("Game Over"); // HOW TO DISPLAY AN IMAGE INSTEAD?
+  gameOverImg.classList.remove("hide");
+  restartBtnOver.classList.remove("hide");
+  questionBox.classList.add("hide");
+  gameLogo.classList.add("hide");
+  restartBtnOver.addEventListener("click", () => {
+    restart();
+  });
+  // window.alert("Game Over"); // HOW TO DISPLAY AN IMAGE INSTEAD?
 }
 //FUNCTION TO BE CALLED WHEN YOU WIN
 function youWin() {
-  window.alert("You Win"); // HOW TO DISPLAY AN IMAGE INSTEAD?
+  youWinImg.classList.remove("hide");
+  restartBtn.classList.remove("hide");
+  questionBox.classList.add("hide");
+  gameLogo.classList.add("hide");
+  restartBtn.addEventListener("click", () => {
+    restart();
+  });
+}
+
+// FUNCTION TO RESTART
+function restart() {
+  console.log("cliquei no game over");
+  location.reload();
 }
 
 // EVENT LISTENERS //
