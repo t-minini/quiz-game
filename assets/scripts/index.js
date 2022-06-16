@@ -1,4 +1,3 @@
-
 // QUESTIONS DATABASE //
 const arrQuestions = [
   {
@@ -54,12 +53,12 @@ const arrQuestions = [
   {
     question: "How do you create a function in JavaScript?",
     answers: [
-      "function myFunction()",
-      "function = myFunction()",
+      "function myFunction( )",
+      "function = myFunction( )",
       "function:myFunction",
-      "function() = myFunction",
+      "function( ) = myFunction",
     ],
-    correctAnswer: "function myFunction()",
+    correctAnswer: "function myFunction( )",
   },
 ];
 
@@ -83,10 +82,17 @@ const gameOverImg = document.getElementById("game-over-img");
 const restartBtn = document.getElementById("restart-btn");
 // RESTART BUTTON OVER
 const restartBtnOver = document.getElementById("restart-btn-over");
+// THREE HEARTS IMG
+const threeHeart = document.getElementById("three-heart");
+// TWO HEARTS IMG
+const twoHeart = document.getElementById("two-heart");
+// ONE HEART IMG
+const oneHeart = document.getElementById("one-heart");
+// HEARTS <DIV>
+const heartsDiv = document.getElementById("hearts");
 // GAME SOUNDS
 const gameOverSound = new Audio("./assets/sounds/game-over-sound.mp3");
 const youWinSound = new Audio("./assets/sounds/you-win-sound.mp3");
-
 
 // FUNCTIONS //
 
@@ -94,6 +100,7 @@ const youWinSound = new Audio("./assets/sounds/you-win-sound.mp3");
 function startButton() {
   startBtn.classList.add("hide");
   questionBox.classList.remove("hide");
+  threeHeart.classList.remove("hide-heart");
   randomQuestion();
   addEvents();
   selectQuestion();
@@ -140,7 +147,16 @@ function checkAnswer(answer) {
     selectQuestion();
   } else {
     totalLife--;
-    if (totalLife === 0) {
+    if (totalLife === 2) {
+      threeHeart.classList.add("hide-heart");
+      twoHeart.classList.remove("hide-heart");
+    }
+    if (totalLife === 1) {
+      twoHeart.classList.add("hide-heart");
+      oneHeart.classList.remove("hide-heart");
+    }
+    if (totalLife < 1) {
+      oneHeart.classList.add("hide-heart");
       return gameOver();
     }
   }

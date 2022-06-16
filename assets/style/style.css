@@ -18,15 +18,15 @@ body {
   width: 500px;
   height: 400px;
   background-color: rgb(255, 255, 255);
-  border-radius: 0px;
+  border-radius: 60px;
   padding: 10px;
-  box-shadow: 0 5px 25px 0px rgba(17, 23, 24, 0.704);
+  box-shadow: 0 5px 25px 0px rgba(255, 255, 255, 0.5);
 }
-/* GAME LOGO AR START SCREEN */
+/* GAME LOGO AT START SCREEN */
 .game-logo-start img {
   padding: 10px;
   margin: 50px 0px 10px 0px;
-  height: 185px;
+  height: 130px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,7 @@ body {
 }
 /* QUESTION + ANSWER SECTION */
 #question-box {
-  margin: 0px;
+  margin: 25px 5px;
 }
 #question {
   margin: 0px;
@@ -54,8 +54,9 @@ body {
   gap: 10px;
   margin: 20px 0;
 }
+/* START GAME SESSION */
 .start-game {
-  margin: 15px 0px 0px 0px;
+  margin: 50px 0px 0px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,21 +103,32 @@ body {
   position: relative;
   font-size: 1.9rem;
   font-weight: bold;
-  bottom: 150px;
-  left: 280px;
+  bottom: 125px;
+  left: 265px;
 }
 /* GAME OVER SCREEN */
 .game-over-img {
   padding: 0px;
   margin: 40px 10px 0px 35px;
   width: 400px;
-  height: 200px;
 }
 .restart-btn-over {
   margin: 20px 0px 0px 0px;
   font-size: 1.9rem;
   font-weight: bold;
   position: relative;
-  bottom: -20px;
+  bottom: -8px;
   left: 160px;
+}
+.hide-heart {
+  display: none;
+}
+#one-heart,
+#two-heart,
+#three-heart {
+  width: 70px;
+  height: 20px;
+  position: relative;
+  bottom: 10px;
+  left: 190px;
 }
