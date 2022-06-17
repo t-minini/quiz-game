@@ -156,7 +156,6 @@ function checkAnswer(answer) {
       oneHeart.classList.remove("hide-heart");
     }
     if (totalLife < 1) {
-      oneHeart.classList.add("hide-heart");
       return gameOver();
     }
   }
@@ -164,6 +163,7 @@ function checkAnswer(answer) {
 //FUNCTION TO BE CALLED WHEN THE GAME ENDS
 function gameOver() {
   gameOverSound.play();
+  heartsDiv.classList.add("hide-heart");
   gameOverImg.classList.remove("hide");
   restartBtnOver.classList.remove("hide");
   questionBox.classList.add("hide");
@@ -174,6 +174,8 @@ function gameOver() {
 }
 //FUNCTION TO BE CALLED WHEN YOU WIN
 function youWin() {
+  youWinSound.play();
+  heartsDiv.classList.add("hide-heart");
   youWinImg.classList.remove("hide");
   restartBtn.classList.remove("hide");
   questionBox.classList.add("hide");
@@ -181,7 +183,6 @@ function youWin() {
   restartBtn.addEventListener("click", () => {
     restart();
   });
-  youWinSound.play();
 }
 // FUNCTION TO RESTART GAME
 function restart() {
