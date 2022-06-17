@@ -1,4 +1,4 @@
-﻿# Welcome to my Project #1: The Game
+﻿# Welcome to Project #1: The Game
 
 ## About me
 I am a former Brazilian/Italian interior designer, living in Dublin, Ireland, that recently decided to start to give my first steps towards a career change by attending a Bootcamp at Ironhack.
