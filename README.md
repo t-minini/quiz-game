@@ -16,4 +16,4 @@ The player wins when all the correct answers are chosen (nine in total), and los
 ## Game presentation (slides)
 You can find the slides presentation at the following link: [Slides Here!](https://docs.google.com/presentation/d/1v4SSWm-Q2Cdq7D6G-PRlsr2n79pAWQMufjMQcWGg2wc/edit?usp=sharing)
 ## Play it now!
-You can play the game at the following link: [Play Here!](https://t-minini.github.io/project-one-game/)
+You can play the game at the following link: [Play Here!](https://t-minini.github.io/project-one-the-game/)
