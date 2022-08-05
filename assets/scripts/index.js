@@ -135,7 +135,7 @@ function shuffleAnswers() {
     .sort(() => Math.random() - Math.random())
     .slice();
 }
-// FUNCION TO CHECK IF ANSWER IS CORRECT OR NOT
+// FUNCTION TO CHECK IF ANSWER IS CORRECT OR NOT
 let totalLife = 3;
 function checkAnswer(answer) {
   if (arrQuestions[round].correctAnswer === answer) {
