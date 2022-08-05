@@ -1,7 +1,0 @@
-
-// CLASSES
-class Game {
-    constructor() {
-
-    }
-}
