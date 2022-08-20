@@ -6,7 +6,7 @@ const arrQuestions = [
     correctAnswer: 57,
   },
   {
-    question: "Which company developed JavaScript?",
+    question: "Which company developed JS?",
     answers: ["Amazon", "Netscape", "Microsoft", "Oracle"],
     correctAnswer: "Netscape",
   },
@@ -21,12 +21,12 @@ const arrQuestions = [
     correctAnswer: "<!-- your comment here -->",
   },
   {
-    question: "What is the data type of variables in JavaScript?",
+    question: "What is the data type of variables in JSc?",
     answers: ["String", "Object", "Boolean", "Undefined"],
     correctAnswer: "Object",
   },
   {
-    question: "Choose the correct HTML tag for the largest heading.",
+    question: "Choose the HTML tag for the largest heading.",
     answers: ["<heading>", "<h6>", "<head>", "<h1>"],
     correctAnswer: "<h1>",
   },
@@ -46,12 +46,12 @@ const arrQuestions = [
     correctAnswer: "Cascading Style Sheets",
   },
   {
-    question: "Inside which HTML element do we put the JavaScript?",
+    question: "Inside which HTML element do we put the JS?",
     answers: ["<js>", "<script>", "<javascript>", "<scripting>"],
     correctAnswer: "<script>",
   },
   {
-    question: "How do you create a function in JavaScript?",
+    question: "How do you create a function in JS?",
     answers: [
       "function myFunction( )",
       "function = myFunction( )",

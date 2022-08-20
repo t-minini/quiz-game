@@ -132,3 +132,63 @@ body {
   bottom: 10px;
   left: 190px;
 }
+
+@media only screen and (max-width: 400px) {
+  .game-card {
+    width: 360px;
+    height: 400px;
+    border-radius: 30px;
+  }
+  .game-logo-start img {
+    margin: 10px 0px 10px 0px;
+    height: 100px;
+    position: relative;
+    top: 0px;
+
+  }
+  .start-btn {
+    font-size: 2rem;
+    position: relative;
+    top: 50px;
+  }
+  .answer-box {
+    margin: 50px 0px;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 10px;
+    margin: 10px 0;
+  }
+  #question-box {
+    margin: 5px 5px;
+  }
+  #one-heart,
+#two-heart,
+#three-heart {
+  width: 70px;
+  height: 20px;
+  position: relative;
+  top: 20px;
+  left: 140px;
+}
+.game-over-img {
+  margin: 40px 10px 0px 15px;
+  width: 310px;
+}
+.restart-btn-over {
+  position: relative;
+  top: 30px;
+  left: 100px;
+}
+.you-win-img {
+  position: relative;
+  width: 310px;
+  height: 310px;
+  top: 40px;
+  left: -30px;
+}
+.restart-btn-win {
+  position: relative;
+  bottom: 65px;
+  left: 170px;
+}
+}
