@@ -21,7 +21,7 @@ const arrQuestions = [
     correctAnswer: "<!-- your comment here -->",
   },
   {
-    question: "What is the data type of variables in JSc?",
+    question: "What is the data type of variables in JS?",
     answers: ["String", "Object", "Boolean", "Undefined"],
     correctAnswer: "Object",
   },
