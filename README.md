@@ -1,10 +1,11 @@
-﻿# Welcome to Project #1: The Game
+﻿# Quiz Game
 
 ## About me 🙋🏻‍♂️
-I am a former Brazilian/Italian interior designer living in Dublin, Ireland, who decided to take my first steps toward a career change by attending a Bootcamp at Ironhack São Paulo.
+I am a former Brazilian/Italian interior designer living in Dublin, Ireland, who decided to take my first steps toward a career change by attending a Bootcamp at Ironhack.
 
 ## About the game 💭
-This short quiz game was created to test the user's knowledge of the Web Development subject and to practice the new skills acquired during the first two weeks of the Bootcamp at Ironhack.
+This is my first ever project created using CSS, HTML and JavaScript.
+The game was created to test the user's knowledge of the Web Development subject and to practice the new skills acquired during the first two weeks of the Bootcamp at Ironhack.
 
 ## How to play? 🤔
 To play, the user needs to click the START GAME button, which leads to the first question, which contains four options as answers, just one correct.

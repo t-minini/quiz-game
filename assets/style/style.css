@@ -3,6 +3,7 @@
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
+
 body {
   background-color: rgb(29, 118, 150);
   padding: 0;
@@ -13,32 +14,41 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 /* GAME CARD */
 .game-card {
-  width: 500px;
+  width: 550px;
   height: 400px;
   background-color: rgb(255, 255, 255);
-  border-radius: 60px;
+  border-radius: 40px;
   padding: 10px;
   box-shadow: 0 5px 25px 0px rgba(255, 255, 255, 0.5);
 }
+
 /* GAME LOGO AT START SCREEN */
+
 .game-logo-start img {
-  padding: 10px;
-  margin: 50px 0px 10px 0px;
-  height: 130px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* padding: 10px; */
+  /* margin: 50px 0px 10px 0px; */
+  margin-top: 50px;
+  margin-bottom: 20px;
+  height: 120px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
 }
+
 .game-logo-start {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 /* QUESTION + ANSWER SECTION */
+
 #question-box {
   margin: 25px 5px;
+  margin-bottom: 20px;
 }
 #question {
   margin: 0px;
@@ -47,6 +57,7 @@ body {
   background-color: rgb(40, 66, 116);
   color: white;
 }
+
 .answer-box {
   margin: 50px 0px;
   display: grid;
@@ -54,103 +65,121 @@ body {
   gap: 10px;
   margin: 20px 0;
 }
+
 /* START GAME SESSION */
+
 .start-game {
   margin: 50px 0px 0px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .start-btn {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 2rem;
+  /* padding: 30px; */
+  /* font-weight: bold; */
 }
+
 .answer-btn {
   background-color: cornflowerblue;
 }
+
 .btn {
   background-color: #6495ed;
   border: none;
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 5px 20px;
   color: white;
   box-shadow: 5px 5px rgb(193, 192, 192);
 }
+
 .btn:hover {
   border: white;
   background-color: rgb(151, 177, 224);
   color: white;
 }
+
 .hide {
   display: none;
 }
+
 /* YOU WIN SCREEN */
+
 .you-win-img {
   padding: 0px;
   position: relative;
-  margin: 0px 0px 0px 45px;
-  width: 390px;
-  height: 390px;
+  margin: 15px 0px 0px 70px;
+  width: 350px;
+  height: 350px;
   bottom: 2px;
   left: 2px;
 }
+
 #restart-btn-win {
   padding: 0px 10px 0px 10px;
   margin: 0px 0px 0px 300px;
 }
+
 .restart-btn-win {
   margin: 20px 0px 0px 0px;
   position: relative;
   font-size: 1.9rem;
-  font-weight: bold;
   bottom: 125px;
   left: 265px;
 }
+
 /* GAME OVER SCREEN */
+
 .game-over-img {
   padding: 0px;
-  margin: 40px 10px 0px 35px;
+  margin: 40px 10px 0px 60px;
   width: 400px;
 }
+
 .restart-btn-over {
   margin: 20px 0px 0px 0px;
   font-size: 1.9rem;
-  font-weight: bold;
   position: relative;
   bottom: -8px;
-  left: 160px;
+  left: 180px;
 }
+
 .hide-heart {
   display: none;
 }
+
+#hearts {
+  text-align: center;
+}
+
 #one-heart,
 #two-heart,
 #three-heart {
   width: 70px;
   height: 20px;
-  position: relative;
-  bottom: 10px;
-  left: 190px;
 }
 
 @media only screen and (max-width: 420px) {
   .game-card {
-    width: 420px;
-    height: 400px;
+    width: 390px;
+    height: 360px;
     border-radius: 30px;
   }
+
   .game-logo-start img {
     margin: 10px 0px 10px 0px;
-    height: 100px;
+    height: 80px;
     position: relative;
     top: 0px;
-
   }
+
   .start-btn {
     font-size: 2rem;
     position: relative;
-    top: 50px;
+    top: 30px;
   }
+
   .answer-box {
     margin: 50px 0px;
     display: grid;
@@ -158,37 +187,39 @@ body {
     gap: 10px;
     margin: 10px 0;
   }
+
   #question-box {
     margin: 5px 5px;
   }
+
   #one-heart,
-#two-heart,
-#three-heart {
-  width: 70px;
-  height: 20px;
-  position: relative;
-  top: 20px;
-  left: 140px;
-}
-.game-over-img {
-  margin: 40px 10px 0px 15px;
-  width: 310px;
-}
-.restart-btn-over {
-  position: relative;
-  top: 30px;
-  left: 100px;
-}
-.you-win-img {
-  position: relative;
-  width: 310px;
-  height: 310px;
-  top: 40px;
-  left: -30px;
-}
-.restart-btn-win {
-  position: relative;
-  bottom: 65px;
-  left: 170px;
-}
+  #two-heart,
+  #three-heart {
+    width: 70px;
+    height: 20px;
+  }
+
+  .game-over-img {
+    margin: 40px 10px 0px 25px;
+    width: 310px;
+  }
+
+  .restart-btn-over {
+    position: relative;
+    top: 10px;
+    left: 100px;
+  }
+
+  .you-win-img {
+    position: relative;
+    width: 310px;
+    height: 310px;
+    left: -40px;
+  }
+
+  .restart-btn-win {
+    position: relative;
+    bottom: 95px;
+    left: 185px;
+  }
 }
