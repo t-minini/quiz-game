@@ -15,7 +15,7 @@ The game gives the player three lives, decreasing as wrong answers are chosen.
 The player wins when all the correct answers are chosen (nine in total) and loses when no longer lives are left.
 
 ## Play it now! 🎮
-You can play the game at the following link: [Play Here!](https://t-minini.github.io/project-one-the-game/)
+You can play the game at the following link: [Play Here!](https://t-minini.github.io/quiz-game/)
 
 ## Tools used, IDE and Workspace Specs 💻
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
