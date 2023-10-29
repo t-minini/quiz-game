@@ -1,7 +1,4 @@
 {
-    "cSpell.words": [
-        "Bootcamp",
-        "Ironhack",
-        "Paulo"
-    ]
+  "cSpell.words": ["Bootcamp", "Ironhack", "Paulo"],
+  "liveServer.settings.port": 5501
 }
